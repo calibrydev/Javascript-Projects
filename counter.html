@@ -54,8 +54,10 @@
         <button>Reset</button>
 
         <script >
+            //here we use the document.getelementby id to select value and button
             let  value=document.getElementById("value");
             let button=document.querySelectorAll("button");
+            //the nodelist to manipulate 
             button[0].onclick=()=>{
                 value.innerHTML++;
             }
