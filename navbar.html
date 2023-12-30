@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mother{
+            background-color: green;
+            width: 60%;
+            height: 100px;
+            margin-left: 20%;
+            margin-top: 5%;
+            overflow: hidden;
+        }
+        button{
+            float: right;
+            padding: 10px;
+            font-size: 19px;
+            margin-top: -60px;
+        }
+        .links{
+            display: flex;
+            flex-direction: column;
+        }
+        .links a:first-of-type{
+            margin-top: 40px;
+        }
+        .links a{
+            color: black;
+            text-decoration: none;
+            font-size: 22px;
+            margin-left: 43%;
+            margin-bottom: 20px;
+        }
+        .active{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mother" id="mother">
+
+        <h1>LOGOZ</h1>
+        <button id="toggleMenu">Open</button>
+        <div class="links">
+            <a href="#">Home</a><a href="#">About</a>
+            <a href="#">Contacts</a>
+        </div>
+    </div>
+</body>
+<script>
+    let mMother=document.getElementsByClassName("mother");
+    let mother=document.getElementById("mother");
+    let toggleMenu=document.getElementById("toggleMenu");
+    let links=document.querySelector(".links");
+    toggleMenu.onclick=()=>{
+        mMother[0].classList.toggle("active");
+        // if(toggleMenu.innerHTML=="Open"){
+        //     toggleMenu.innerHTML="Close";
+        //     mother.style.height="300px";
+
+        // }
+        // else{
+        //     mother.style.height="100px";
+
+        //     toggleMenu.innerHTML="Open";
+        // }
+    }
+</script>
+</html>

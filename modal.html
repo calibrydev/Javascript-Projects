@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        .Mother{
+            background-color: green;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1{
+            text-align: center;
+        }
+        .child{
+           background-color: white;
+           width: 600px;
+           height: 400px;
+           margin-left: 35%;
+           margin-top: 10%;
+        }
+        button{
+            margin-top: 200PX; 
+            margin-left: 45%;
+            padding: 10px;
+            font-size: 19px;
+        }
+        .links{
+            display: flex;
+            flex-direction: column;
+        }
+         input{
+            margin-bottom: 20px;
+        margin-left: 150px;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 19px;
+            width: 50%;
+            display: none;
+        
+        }
+        input:first-of-type{
+            width: 50px;
+        }
+        form{
+            z-index: 2000000;
+            display: none;
+            background-color: red;
+            width: 40%;
+            margin-left: 31%;
+            margin-top: -38%;
+            display: flex;
+            flex-direction: column;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="Mother">
+        <div class="child">
+            <h1>MOdal</h1>
+            <button id="toggleMenu">Open</button>
+        </div>
+
+    </div>
+    <form>
+        <input type="submit" value="X">
+
+        <input type="text">
+        <input type="text">
+        <input type="submit" value="submit">
+    </form>
+</body>
+<script>
+    let box=document.getElementById("toggleMenu");
+    let form=document.querySelector("form");
+    box.onclick=()=>{
+        form.classList.toggle('active');
+    }
+</script>
+
+</html>

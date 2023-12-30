@@ -11,10 +11,121 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            #review{
+                background-color: rgb(235, 231, 222);
+                width: 650px;
+                height:600px;
+                margin-left: 33%;
+                margin-top: 4%;
+            }
+            h1,h2{
+                text-align: center; 
+            }
+            p{
+                font-size: 20px;
+                width: 240px;
+                text-align: center;
+                margin-left: 33%;
+            }
+            p:last-of-type{
+                margin-left: 10%;
+                width: 80%;
+            }
+            button:last-of-type{
+                margin-left: 44%;
+            }
+            button{
+                margin-left: 30%;
+                margin-top: 5%;
+                padding: 13px;
+                border: none;
+                font-size: 15px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: red;
+            }
+        </style>
     </head>
     <body>
-        <h1>REVIEWS</h1>
-        <p>This are reviews</p>
-        <script src="" async defer></script>
+        <div id="review" >
+
+            <h1>REVIEWS</h1>
+            <h2 id="name"></h2>
+            <p id="profession"> </p>
+            <p id="sttmt">
+               
+        </p>
+        <button> < </button>
+        <button> > </button>
+        <button>Suprise Me </button>
+    </div>
+        <script>
+            let namez=document.getElementById("name");
+            let profession=document.getElementById("profession");
+            let sttmt=document.getElementById("sttmt");
+            let button=document.querySelectorAll("button");
+            let i=0;
+            let review=[
+                {
+                name:"John Doe ",
+                profession:"Engineer",
+                Content :"t. Nemo repudiandae perferendis itaque tempore facilis beatae "
+            },
+            {
+                name:"susan Jane ",
+                profession:"Doctor",
+                Content :"t. Nemo2 repudiandae perferendis itaque tempore facilis beatae "
+            },
+            {
+                name:"John Kimathi ",
+                profession:"Software Engineer",
+                Content :"t. Nemo32 repudiandae perferendis itaque tempore facilis beatae "
+            },
+        
+        ];
+        let position=0;
+        window.addEventListener('DOMContentLoaded',()=>{
+        showReview();
+    });
+    function showReview(){
+        let revyu=review[position];
+        namez.textContent=revyu.name;
+        sttmt.textContent=revyu.Content;
+        profession.textContent=revyu.profession;
+
+    }
+        button[0].onclick=()=>{
+            if(position==0){
+                position=review.length-1;
+            }
+            else{
+                position--;
+            }
+            namez.innerHTML=review[position].name;
+            profession.innerHTML=review[position].profession;
+            sttmt.innerHTML=review[position].Content;
+        }
+        button[1].onclick=()=>{
+            if(position==review.length-1){
+                position=0;
+            }
+            else{
+                position++;
+            }
+            namez.innerHTML=review[position].name;
+            profession.innerHTML=review[position].profession;
+            sttmt.innerHTML=review[position].Content;
+        }
+        button[2].onclick=()=>{
+            let random=Math.floor(Math.random()*review.length);
+            namez.innerHTML=review[random].name;
+            profession.innerHTML=review[random].profession;
+            sttmt.innerHTML=review[random].Content;
+        }
+        
+
+        </script>
     </body>
 </html>
